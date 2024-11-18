@@ -10,3 +10,13 @@ for password use-> docker exec jenkins_container cat /var/jenkins_home/secrets/i
 5) Source Code Management add git and paste GitHub repo link
 6) add Branches to build -> */main
 7) in Build Triggers section -> Enable GitHub Hook Trigger for GITScm Polling
+8) In Build section add build step -> Execute shell and add following
+	# Remove any existing container
+	docker rm -f container1 || true
+	# Build the Docker image
+	docker build -t myapp-image .
+	# Run a new container
+	docker run -d -p 8081:80 --name=container1 myapp-image
+9) Save the jenkins job
+10) Go in Github repos setting and click on webhook -> add webhook 
+11) add payload http://jenkins-server/github-webhook/  and select application/json and add the webhook 
