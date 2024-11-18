@@ -1,0 +1,25 @@
+1) Create new Maven Project
+run in cmd
+mvn archetype:generate -DgroupId=com.example -DartifactId=my-simple-project -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+Inside src/main/java create java file  HelloWorld.java
+
+package com.example;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, Maven!");
+    }
+}
+
+2) add dependencies to POM.xml in <dependencies>
+<dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version>
+        <scope>test</scope>
+</dependency>
+
+3) Compile Maven project by  mvn compile
+4) run test cases by mvn test
+5) create package/ create artifact/jar file mvn package 

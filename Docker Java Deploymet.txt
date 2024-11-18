@@ -1,0 +1,30 @@
+create html file 
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dockerized Apache Server</title>
+</head>
+<body>
+    <h1>Hello, Docker!</h1>
+    <p>This is a sample web page served from a Docker container running Apache.</p>
+</body>
+</html>
+ 
+dockerfile
+FROM httpd:2.4
+COPY index.html /usr/local/apache2/htdocs/
+
+build docker image
+docker build -t my-apache-server .
+
+run the docker container 
+
+docker run -p 8080:80 -d my-apache-server
+
+
+access apache web server 
+
+http://localhost:8080

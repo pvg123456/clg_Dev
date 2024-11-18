@@ -1,0 +1,12 @@
+1)Set Up the Web Application and Git Repository
+
+2)Set Up Jenkins in Docker
+   run in cmd 
+	docker pull jenkins/jenkins:lts
+	docker run -d -p 8080:8080 -p 50000:50000 --name jenkins_container -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+for password use-> docker exec jenkins_container cat /var/jenkins_home/secrets/initialAdminPassword
+3) After this go on http://localhost:8080
+4)create new project with Freestyle project
+5) Source Code Management add git and paste GitHub repo link
+6) add Branches to build -> */main
+7) in Build Triggers section -> Enable GitHub Hook Trigger for GITScm Polling
