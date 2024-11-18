@@ -5,3 +5,17 @@ git push origin main
 git branch feature 
 git checkout feature 
 git checkout main
+git status
+git log
+git merge feature
+git diff
+
+GitHub1 => set git repo by init ->adding and commiting changes -> explore history -> merge branches
+-> git pushing to origin main 
+GitHub2 => clone remote repo -> make changes and create branch -> pushing changes to GitHub -> pull request
+
+GitLab => create remote repo -> clone remote repo to local -> make changes -> add branch -> push to GitLab
+-> create changes to branch -> merge the branch by merge request
+
+BitBucket =>  create remote repo -> clone remote repo to local-> make changes -> add branch -> push to bitbucket
+-> create changes to branch -> merge the branch by merge request
